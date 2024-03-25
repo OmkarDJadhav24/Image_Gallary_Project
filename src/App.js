@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import ImageCard from './components/ImageCard';
+import Welcome from './components/Welcome';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -41,14 +42,13 @@ function App() {
       <Header title="Image Gallary" />
       <Search word={word} setWord={setWord} submitButton={submitSearchButton} />
       <Container className='mt-4'>
-        <Row xs={1} md={2} lg={3}>
+        {images.length ? <Row xs={1} md={2} lg={3}>
           {images.map((image, i) => (
             <Col key={i} className='pb-3'>
               <ImageCard image={image} deleteImage={handleDeleteImage} />
             </Col>
           ))}
-
-        </Row>
+        </Row> : <Welcome />}
       </Container>
 
       {/* <ImageCard image={images[0]} /> */}

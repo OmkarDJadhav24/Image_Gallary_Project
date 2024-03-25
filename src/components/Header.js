@@ -11,7 +11,7 @@ export default function Header(props) {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light" style={backgroundStyle}>
                 <Container>
-                    <Logo style={{maxWidth: '12rem', maxHeight:'2rem'}} />    
+                    <Logo alt={props.title} style={{maxWidth: '12rem', maxHeight:'2rem'}} />    
                     {/* <a className="navbar-brand" href="/">{props.title}</a> */}
                 </Container>
             </nav>
